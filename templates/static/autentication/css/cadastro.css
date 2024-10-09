@@ -1,0 +1,31 @@
+button {
+    background-color: aqua;
+    color: crimson  ;
+}
+.header_bg{
+    background-image: url("/static/autentication/img/bg.png");
+}
+.header_logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;         
+}
+.img_logo{
+    width: 200px;
+    height: auto;
+}
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .img_logo {
+      width: 120px; /* Tamanho ideal para dispositivos móveis */
+    }
+}
+.alerta_sucesso{
+    background-color: blue;
+    color: white;
+}
+.alerta_erro{
+    background-color: red;
+    color: black;
+}

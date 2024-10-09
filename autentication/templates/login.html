@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'autentication/css/cadastro.css' %}">
+{% endblock %}
+{% block 'title' %}
+    CORNOVERSO | Cadastro
+{% endblock %}
+{% block 'body' %}
+    <div class="header_logo">
+        <h2>
+            <img src="{% static 'autentication/img/logo_1.png' %}" alt="Logo"class="img_logo">
+        </h2>
+    </div>
+    <div class="header_bg">
+
+    </div>
+    <div class="area-cadastro">
+        {% if messages %}
+            <br>
+                {% for message in messages %}
+                    <div class="{{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+        {% endif %}
+        <h2>Seja Bem vindo!</h2>
+        <p>Entre com sua conta</p>  
+        <hr>
+        
+        <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+            <span>Usuario</span>
+            <input type="text" name="usuario" placeholder="Digite seu usuario">
+            <br>
+
+            <div id="div-senha">
+                <div id="senha">
+                    <span>senha</span>
+                    <input type="password" name="password" placeholder="Digite sua senha">
+                </div>
+            </div>
+            <br>
+            <button>Entrar</button>    
+        </form>
+
+    </div>
+{% endblock %}
